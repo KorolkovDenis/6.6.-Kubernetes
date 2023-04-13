@@ -34,9 +34,13 @@
 
 прописываю их все в /etc/hosts на всех нодах для дальнейшего благополучного взаимодействия.
 
+```
+
 echo "192.168.43.178 k8s-master-1.dv.local k8s-master-1" | sudo tee -a /etc/hosts
 echo "192.168.43.224 k8s-node-1.dv.local k8s-node-1" | sudo tee -a /etc/hosts
 echo "192.168.43.222 k8s-node-2.dv.local k8s-node-2" | sudo tee -a /etc/hosts
+
+```
 
 ![screen1](https://github.com/KorolkovDenis/6.6.-Kubernetes/blob/main/screenshots/screen1.jpg)
 
