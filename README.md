@@ -28,6 +28,43 @@
 
 В качестве ответа пришлите скриншот результата выполнения команды `kubectl get po -n kube-system`.
 
+Ответ:
+
+по плану у меня в кластере 1 master-нода и 2 worker- ноды:
+
+прописываю их все в /etc/hosts на всех нодах для дальнейшего благополучного взаимодействия.
+
+echo "192.168.43.178 k8s-master-1.dv.local k8s-master-1" | sudo tee -a /etc/hosts
+echo "192.168.43.224 k8s-node-1.dv.local k8s-node-1" | sudo tee -a /etc/hosts
+echo "192.168.43.222 k8s-node-2.dv.local k8s-node-2" | sudo tee -a /etc/hosts
+
+![screen1](https://github.com/KorolkovDenis)
+
+###До установки calico:
+
+Посмотрим список всех узлов в кластере и статус каждого узла с помощью команды:
+
+kubectl get nodes
+
+![screen2](https://github.com/KorolkovDenis)
+
+Узлы находятся статусе “NotReady”. Чтобы это исправить нужно установить CNI (Container Network Interface) или сетевые надстройки, такие как Calico, Flannel и Weave-net.
+
+Посмотрим список всех узлов в кластере и статус каждого узла с помощью команды:
+
+kubectl get pods -n kube-system
+
+![screen3](https://github.com/KorolkovDenis)
+
+###После установки calico:
+
+Узлы находятся статусе “Ready” и кластер Kubernetes готов к работе.
+
+kubectl get nodes
+kubectl get pods -n kube-system
+
+![screen4](https://github.com/KorolkovDenis)
+
 ---
 
 ### Задание 2
@@ -68,6 +105,24 @@ spec:
 
 В качестве ответа пришлите вывод команды `helm get manifest <имя_релиза>`.
 
+Ответ:
+
+```
+kubectl cluster-info
+kubectl get nodes
+kubectl get po -n kube-system
+kubectl get po
+helm list
+```
+
+![screen5](https://github.com/KorolkovDenis)
+
+```
+helm get manifest my-helm-project-chart
+```
+
+![screen6](https://github.com/KorolkovDenis)
+
 ---
 ## Дополнительные задания* (со звёздочкой)
 
@@ -82,3 +137,8 @@ spec:
 1. Запишите что-нибудь в файл на сервере, подключившись к поду с помощью `kubectl exec`, и проверьте правильность подключения volume.
 
 В качестве ответа пришлите получившийся yaml-файл.
+
+
+## Моя работа в Google:
+
+[Моя работа по Kubernetes](https://docs.google.com/document/d/1Fxe3hFqvGzJJq_71se5I4TKkli9w5F40/edit?usp=share_link&ouid=104113173630640462528&rtpof=true&sd=true)
