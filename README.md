@@ -38,7 +38,7 @@ echo "192.168.43.178 k8s-master-1.dv.local k8s-master-1" | sudo tee -a /etc/host
 echo "192.168.43.224 k8s-node-1.dv.local k8s-node-1" | sudo tee -a /etc/hosts
 echo "192.168.43.222 k8s-node-2.dv.local k8s-node-2" | sudo tee -a /etc/hosts
 
-![screen1](https://github.com/KorolkovDenis)
+![screen1](https://github.com/KorolkovDenis/6.6.-Kubernetes/blob/main/screenshots/screen1.jpg)
 
 ###До установки calico:
 
@@ -46,7 +46,7 @@ echo "192.168.43.222 k8s-node-2.dv.local k8s-node-2" | sudo tee -a /etc/hosts
 
 kubectl get nodes
 
-![screen2](https://github.com/KorolkovDenis)
+![screen2](https://github.com/KorolkovDenis/6.6.-Kubernetes/blob/main/screenshots/screen2.jpg)
 
 Узлы находятся статусе “NotReady”. Чтобы это исправить нужно установить CNI (Container Network Interface) или сетевые надстройки, такие как Calico, Flannel и Weave-net.
 
@@ -54,7 +54,7 @@ kubectl get nodes
 
 kubectl get pods -n kube-system
 
-![screen3](https://github.com/KorolkovDenis)
+![screen3](https://github.com/KorolkovDenis/6.6.-Kubernetes/blob/main/screenshots/screen3.jpg)
 
 ###После установки calico:
 
@@ -63,7 +63,7 @@ kubectl get pods -n kube-system
 kubectl get nodes
 kubectl get pods -n kube-system
 
-![screen4](https://github.com/KorolkovDenis)
+![screen4](https://github.com/KorolkovDenis/6.6.-Kubernetes/blob/main/screenshots/screen4.jpg)
 
 ---
 
@@ -115,13 +115,13 @@ kubectl get po
 helm list
 ```
 
-![screen5](https://github.com/KorolkovDenis)
+![screen5](https://github.com/KorolkovDenis/6.6.-Kubernetes/blob/main/screenshots/screen5.jpg)
 
 ```
 helm get manifest my-helm-project-chart
 ```
 
-![screen6](https://github.com/KorolkovDenis)
+![screen6](https://github.com/KorolkovDenis/6.6.-Kubernetes/blob/main/screenshots/screen6.jpg)
 
 ---
 ## Дополнительные задания* (со звёздочкой)
@@ -139,6 +139,6 @@ helm get manifest my-helm-project-chart
 В качестве ответа пришлите получившийся yaml-файл.
 
 
-## Моя работа в Google:
+## Моя полная работа в Google:
 
 [Моя работа по Kubernetes](https://docs.google.com/document/d/1Fxe3hFqvGzJJq_71se5I4TKkli9w5F40/edit?usp=share_link&ouid=104113173630640462528&rtpof=true&sd=true)
